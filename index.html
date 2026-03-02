@@ -851,4 +851,13 @@
   window.addEventListener('scroll', () => {
     let current = '';
     sections.forEach(s => {
-      if (w
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--accent)' : '';
+    });
+  });
+</script>
+
+</body>
+</html>
